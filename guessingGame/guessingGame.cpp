@@ -16,12 +16,16 @@ using namespace std;
 
 int main() {
 
+  //initializations
   srand(time(NULL));
   int guesscount = 0;
   int userguess = 0;
+
+  //generate random number
   int randnum = 0;
   randnum = rand() % 101;
-  bool guessed = false;
+  
+  //boolean for the loop
   bool playing = true;
 
   cout << "Guess a number from 0 to 100." << endl;
@@ -31,17 +35,17 @@ int main() {
     cin >> userguess;
     guesscount++;
 
-    if (userguess > randnum) {
+    if (userguess > randnum) { //indicates if user's guess is too high
       cout << "too high" << endl;
     }
 
-    else if (userguess < randnum) {
+    else if (userguess < randnum) { //indicates if user's guess is too low
       cout << "too low" << endl;
     }
 
-    else if (userguess == randnum) {
+    else if (userguess == randnum) { //yay number has been guessed
       cout << "You guessed the number congratulations." << endl;
-      cout << "guesscount: " << guesscount << endl;
+      cout << "guesscount: " << guesscount << endl; //# of guesses
       cout << "type y if u want to play again, type n if ur done"<< endl;
       char input = 'a';
       cin >> input;
@@ -49,6 +53,7 @@ int main() {
       
       if (input == 'y') {
         playing = true;
+	//setting up next game if user decides to play again
         randnum = rand() % 101;
         guesscount = 0;
         userguess = 0;
@@ -56,7 +61,7 @@ int main() {
       } 
       
       else if (input == 'n') {
-        playing = false;
+        playing = false; //end the program if they are not playing again
       }
     }
   }
