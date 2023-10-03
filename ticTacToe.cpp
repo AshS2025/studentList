@@ -20,7 +20,7 @@ bool checkWin (int board[3][3], int player);
 bool checkTie (int board[3][3]);
 
 int main(){
-  //creating board
+  //creating the board
   int board[3][3];
   int turn = X_TURN;
   int player = X_MOVE;
